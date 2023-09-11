@@ -3,31 +3,11 @@ const Item = require('../models/itemModel');
 
 // add product
 const addItem = (async (req , res) => {
-    let emptyField = [];
+    const {name , category , price , description} = req.body;
+    const image = req.file.filename;
 
-    if (!name){
-        emptyField.push('title');
-    }
-    if (!description){
-        emptyField.push('description');
-    }
-    if (!category){
-        emptyField.push ('category');
-    }
-    if (!price){
-        emptyField.push('price');
-    }
-    if (!image){
-        emptyField.push('image');
-    }
-
-    if (emptyField.length > 0){
-        res.status(404).json({error : 'All fields must be filled ', emptyField});
-    }
-
-    const {name , image , category , price , description} = req.body;
     try {
-        const item = await Item.create ({name , image , category , price , description});
+        const item = await Item.create ({name , category , price , description , image});
         res.status(200).json(item);
         console.log (req.body);
     }
@@ -39,17 +19,49 @@ const addItem = (async (req , res) => {
 // get all products
 const getItems =  ( async (req , res) => {  
     try {
-        const item = await Item.find();
-        res.status(200).json(item);
+        const items = await Item.find().sort({ createdAt: -1 });
+        res.status(200).json(items)
     }
     catch(error){
         res.status(401).json({messsage : 'Query failed'});
     }
 })
 // get single product
-
+const getItem = (async (req , res) => {
+    try {
+        const {id} = req.params;
+        const item = await Item.findById(id);
+        res.status(200).json(item);
+        console.log (req.body);
+    }
+    catch(error){
+        res.status(401).json({messsage : 'Query failed'});
+    }
+})
 // delete product
+const deleteItem = (async (req , res) => {
+    try{
+        const {id} = req.params;
+        const item = await Item.findByidAndDelete(id)
+        res.status(200).json(item)
+    }
+    catch (error){
+        res.status(401).json({message : 'Failed to delete'});
+    }
+})
 
 // edit product
 
-module.exports = {getItems , addItem}
+const editItem = (async (req , res) => {
+    try {
+        const {id} = req.params;
+        const item = await Item.findByIdAndUpdate({_id : id} , {...req.body} , {new : true});
+        res.status(200).json({message : 'Item updated' + item});
+    }
+    catch (error){
+        res.status(401).json({message : 'Failed to update'});
+    }
+    
+})
+
+module.exports = {getItems , addItem , getItem , deleteItem , editItem};
