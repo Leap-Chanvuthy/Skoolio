@@ -41,8 +41,8 @@ function BarChart() {
   };
 
   return (
-    <div >
-      <h2>Monthly Sales Chart</h2>
+    <div className='py-4' >
+      <h2 className='text-color1_dark font-bold text-lg text-start px-3 py-2​'>Daily Sale Statistic</h2>
       <Bar className='lg:max-w-xl md:max-w-md sm:max-w-sm' data={data} options={options} />
     </div>
   );

@@ -8,7 +8,7 @@ import {AiFillHome} from 'react-icons/ai';
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col justify-between text-gray-400 bg-color1_dark h-screen px-4 py-8 items-center sticky bottom-0">
+    <div className="flex flex-col justify-between text-gray-400 bg-color1_dark h-screen px-4 py-8 items-center sticky top-0">
       <div>
         <Link to="/">
           <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
