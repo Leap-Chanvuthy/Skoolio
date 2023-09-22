@@ -15,6 +15,8 @@ Mass messaging to students
 Assigning marks and grades
 Development commands
 
+![My photo](./frontend/public/readme2.png)
+
 Node.js
 
 npm install
