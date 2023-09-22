@@ -1,22 +1,24 @@
 import { BrowserRouter , Routes , Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import Menu from "./pages/Menu";
-import Sale from "./pages/Sale";
-import Setting from "./pages/Setting";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Student from "./pages/Student";
+import Add from "./pages/Add";
+
 function App() {
   return (
     <BrowserRouter>
-
       <div className="App">
+        <Navbar/>
       <div>
         <div className="flex">
           <Sidebar/>
           <Routes>
-            <Route path="/" element={<Dashboard/>} />
-            <Route path="/menu" element={<Menu/>} />
-            <Route path="/sale" element={<Sale/>} />
-            <Route path="/setting" element={<Setting/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/student" element={<Student/>} />
+            <Route path="/add-to-list" element={<Add/>} />
           </Routes>
         </div>
       </div>

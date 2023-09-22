@@ -6,15 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors : {
-        color1_dark : '#001524',
-        color2_rose : '#f1356d',
-        color3_orange : '#dd571c',
-        color4_blue : '#014c75'
+        primary: "#641ae6",
+        secondary: "#d926a9",        
+        accent: "#1fb2a6",                
+        neutral: "#2a323c",               
+        base_100: "#1d232a",                
+        info: "#3abff8",                 
+        success: "#36d399",                
+        warning: "#fbbd23",      
+        error: "#f87272",
       },
       fontFamily : {
         khmer : 'Noto Serif Khmer',
       }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }

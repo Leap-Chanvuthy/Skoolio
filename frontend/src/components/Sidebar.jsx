@@ -1,53 +1,51 @@
 import { Link } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
-import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { VscGraphLine } from "react-icons/vsc";
+import { PiStudentDuotone } from "react-icons/pi";
+import { BsPeopleFill } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
-import { AiFillSetting } from "react-icons/ai";
-import {AiFillHome} from 'react-icons/ai';
-
+import { BsFillPlusSquareFill } from "react-icons/bs";
+import {AiFillHome} from 'react-icons/ai'
+;
 const Sidebar = () => {
   return (
-    <div className="flex flex-col justify-between text-gray-400 bg-color1_dark h-screen px-4 py-8 items-center sticky top-0">
+    <div className="flex flex-col justify-between text-gray-400 bg-neutral h-[42rem] px-8 py-4 items-center sticky top-0">
       <div>
-        <Link to="/">
-          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
+      <Link to="/">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-warning   py-5 ">
+            <AiFillHome />
+            <h3>Home</h3>
+          </div>
+        </Link>
+        <Link to="/dashboard">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-warning   py-5 ">
             <MdDashboard />
             <h3>Dashboard</h3>
           </div>
         </Link>
-        <Link to="/menu">
-          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
-            <MdOutlineRestaurantMenu />
-            <h3>Menu</h3>
+        <Link to="/student">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-warning   py-5 ">
+            <PiStudentDuotone />
+            <h3>Student</h3>
           </div>
         </Link>
-        <Link to="/sale">
-          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
-            <VscGraphLine />
-            <h3>Sale</h3>
+        <Link to="/employee">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-warning   py-5 ">
+            <BsPeopleFill />
+            <h3>Employee</h3>
           </div>
         </Link>
-        <Link to="/setting">
-          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
-            <AiFillSetting />
-            <h3>Setting</h3>
+        <Link to="/add-to-list">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-warning   py-5 ">
+            <BsFillPlusSquareFill />
+            <h3>Add to list</h3>
           </div>
         </Link>
         <Link to="/logout">
-          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-color2_rose   py-5 ">
+          <div className="flex justify-start items-center gap-4 text-lg sticky bottom-0 hover:text-error  py-5 ">
             <BiLogOut />
             <h3>Logout</h3>
           </div>
         </Link>
-      </div>
-      <div className="text-center text-sm">
-        <h3>Copyright © 2023</h3>
-        <p>My Shop , All Right Reserved</p>
-        <span className="flex justify-center items-center gap-2">
-            <AiFillHome/>
-            <p>Phnom Penh , Cambodia .</p>
-        </span>
       </div>
     </div>
   );
