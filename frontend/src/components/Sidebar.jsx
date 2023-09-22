@@ -43,7 +43,7 @@ const Sidebar = () => {
       </div>
       <div className="text-center text-sm">
         <h3>Copyright © 2023</h3>
-        <p>Golden Pastry , All Right Reserved</p>
+        <p>My Shop , All Right Reserved</p>
         <span className="flex justify-center items-center gap-2">
             <AiFillHome/>
             <p>Phnom Penh , Cambodia .</p>
