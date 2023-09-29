@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // used routes
-app.use("/api/items", itemRoute);
+app.use("/api/students", itemRoute);
 
 mongoose
   .connect(process.env.DB_URI)

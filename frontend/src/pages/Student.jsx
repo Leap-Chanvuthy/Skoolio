@@ -1,7 +1,30 @@
 import {RiDeleteBin6Line} from "react-icons/ri";
 import {FiEdit} from "react-icons/fi";
+import { useEffect, useState } from "react";
+import useStudentContext from '../hooks/StudentHook'
 
 const Student = () => {
+    
+    const [students , dispatch] = useStudentContext();
+    const [error , setError] = useState(false);
+    const [loading , setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchStudents = async () => {
+            const respone = await fetch ('/api/students')
+            const data = await respone.json();
+            if (respone.ok){
+                dispatch({type : 'SET_STUDENTS' , payload : data})
+                setLoading(false);
+            }
+            if (!respone.ok){
+                setError("Failed loading data");
+            }
+        }
+        fetchStudents();
+    }, [dispatch , students]);
+    
+
     return ( 
         <div className="px-4 py-4 w-full h-[42rem] overflow-y-scroll">
             <div className="overflow-x-auto">
@@ -45,98 +68,6 @@ const Student = () => {
                         </td>
                     </tr>
                     {/* row 2 */}
-                    <tr>
-                        <th>1</th>
-                        <td>Leap</td>
-                        <td>Chanvuthy</td>
-                        <td>01 / December / 2003</td>
-                        <td>Computer Science</td>
-                        <td>
-                            Generation 8
-                        </td>
-                        <td>
-                            <div class="avatar">
-                                <div class="w-16 rounded">
-                                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg" />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center justify-center gap-4">
-                               <button className="text-error"><RiDeleteBin6Line/></button>
-                                <button className="text-info"><FiEdit/></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>1</th>
-                        <td>Leap</td>
-                        <td>Chanvuthy</td>
-                        <td>01 / December / 2003</td>
-                        <td>Computer Science</td>
-                        <td>
-                            Generation 8
-                        </td>
-                        <td>
-                            <div class="avatar">
-                                <div class="w-16 rounded">
-                                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg" />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center justify-center gap-4">
-                               <button className="text-error"><RiDeleteBin6Line/></button>
-                                <button className="text-info"><FiEdit/></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>1</th>
-                        <td>Leap</td>
-                        <td>Chanvuthy</td>
-                        <td>01 / December / 2003</td>
-                        <td>Computer Science</td>
-                        <td>
-                            Generation 8
-                        </td>
-                        <td>
-                            <div class="avatar">
-                                <div class="w-16 rounded">
-                                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg" />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center justify-center gap-4">
-                               <button className="text-error"><RiDeleteBin6Line/></button>
-                                <button className="text-info"><FiEdit/></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>1</th>
-                        <td>Leap</td>
-                        <td>Chanvuthy</td>
-                        <td>01 / December / 2003</td>
-                        <td>Computer Science</td>
-                        <td>
-                            Generation 8
-                        </td>
-                        <td>
-                            <div class="avatar">
-                                <div class="w-16 rounded">
-                                    <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg" />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="flex items-center justify-center gap-4">
-                               <button className="text-error"><RiDeleteBin6Line/></button>
-                                <button className="text-info"><FiEdit/></button>
-                            </div>
-                        </td>
-                    </tr>
                     <tr>
                         <th>1</th>
                         <td>Leap</td>
