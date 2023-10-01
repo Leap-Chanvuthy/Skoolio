@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+
 const Add = () => {
+    const [firstname , setFirstname] = useState(null);
+    const [lastname , setLastname] = useState (null);
+    const [DOB , setDOB] = useState(null);
+    const [major , setMajor] = useState(null);
+    const [generation , setGeneration] = useState(null);
+    const [photo , setPhoto] = useState(null);
+
+    useEffect(() => {
+      
+
+    },[])
+    
     return (
       <div className="flex justify-center w-full items-center">
         <form className="w-full max-w-md">
@@ -34,7 +48,7 @@ const Add = () => {
                 Date of Birth
               </label>
               <input
-                type="text"
+                type="date"
                 id="date_of_birth"
                 placeholder="Type here"
                 className="input input-bordered w-full max-w-xs"
@@ -48,18 +62,6 @@ const Add = () => {
               <input
                 type="text"
                 id="major"
-                placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
-              />
-            </div>
-  
-            <div>
-              <label for="date_of_graduation" className="block mb-2">
-                Date of Graduation
-              </label>
-              <input
-                type="text"
-                id="date_of_graduation"
                 placeholder="Type here"
                 className="input input-bordered w-full max-w-xs"
               />
@@ -84,7 +86,7 @@ const Add = () => {
           
   
           <button type="submit" className="w-full mt-6 btn btn-primary">
-            Add
+            Insert
           </button>
         </form>
       </div>

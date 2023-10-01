@@ -3,16 +3,16 @@ const Item = require('../models/itemModel');
 
 // add product
 const addItem = (async (req , res) => {
-    const {name , category , price , description} = req.body;
-    const image = req.file.filename;
+    const {firstname , lastname , date_of_birth , major , generation} = req.body;
+    const photo = req.file.filename;
 
     try {
-        const item = await Item.create ({name , category , price , description , image});
+        const item = await Item.create ({firstname , lastname , date_of_birth , major , generation , photo});
         res.status(200).json(item);
         console.log (req.body);
     }
     catch (error){
-        res.status(401).json(error.messsage);
+        res.status(401).json(error.message);
     }
 })
 

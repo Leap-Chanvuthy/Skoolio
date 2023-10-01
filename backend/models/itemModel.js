@@ -3,23 +3,27 @@ const Schema = mongoose.Schema;
 
 const itemSchema = Schema(
   {
-    name: {
+    firstname: {
       type: String,
       required: true,
     },
-    image: {
+    lastname: {
       type: String,
       required: true,
     },
-    category: {
+    date_of_birth: {
+      type: Date,
+      required: true,
+    },
+    major: {
       type: String,
       required: true,
     },
-    price: {
-      type: Number,
+    generation: {
+      type: String,
       required: true,
     },
-    description: {
+    photo: {
       type: String,
       required: true,
     },

@@ -5,7 +5,7 @@ const {getItems , addItem , getItem , deleteItem , editItem} = require('../contr
 
 router.get ('/' , getItems);
 router.get ('/:id' , getItem);
-router.post ('/' , multerMiddleware.upload.single('image') , addItem);
+router.post ('/' , multerMiddleware.upload.single('photo') , addItem);
 router.delete ('/:id' , deleteItem);
 router.put('/:id' , editItem);
 

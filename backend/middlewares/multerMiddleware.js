@@ -2,9 +2,9 @@ const multer = require('multer');
 const path = require('path');
 
 const storage = multer.diskStorage({
-  destination: './upload/items',
+  destination: './public/upload/items',
   filename: (req, file, cb) => {
-    cb(null, file.fieldname + '-' + 'Golden-Pastry' +'-'+ Date.now() + path.extname(file.originalname));
+    cb(null, file.fieldname + '-' + 'Student' +'-'+ Date.now() + path.extname(file.originalname));
   }
 });
 
