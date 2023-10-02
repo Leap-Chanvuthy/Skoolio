@@ -12,7 +12,7 @@ const itemSchema = Schema(
       required: true,
     },
     date_of_birth: {
-      type: Date,
+      type: String,
       required: true,
     },
     major: {

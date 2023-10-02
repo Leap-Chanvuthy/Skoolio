@@ -30,7 +30,7 @@ const Student = () => {
         <div className="flex justify-between items-center">
             <Search/>
         </div>
-        <div className="px-4 w-full h-[36rem] overflow-y-scroll">
+        <div className="px-4 w-full h-[34rem] overflow-y-scroll">
           <div className="overflow-x-auto">
             <table className="table text-center">
               <thead>

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -9,6 +10,7 @@ const itemRoute = require("./routes/itemRoute");
 // middlewares
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors({origin : 'http://localhost:3000'}));
 
 // used routes
 app.use("/api/students", itemRoute);
